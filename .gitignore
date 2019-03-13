@@ -1,0 +1,5 @@
+
+AVR/\.piolibdeps/
+AVR/\.pioenvs/
+
+Python/__pycache__
