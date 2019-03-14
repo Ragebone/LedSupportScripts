@@ -16,8 +16,9 @@ def main():
     counter = 0
     start = time.time()
     print("Piping to ", port, " ...")
+    arduino.write(delimiter())
     while True:
-        sent = 0
+        sent = 0        
         #Get Data
         message, addresse = serverSocket.recvfrom(1487)
 
@@ -33,6 +34,7 @@ def main():
         #Send Data
         sent += arduino.write(complement)
         sent += arduino.write(rle)
+        
 
         #Debug Outputs
         if printComplement:
