@@ -5,6 +5,10 @@ arduino, port = serialAVR()
 maxB = config['maxBrightness']
 anzahl = int(input("Anzahl Farbakzente: "))
 colors = list()
+
+#begin data with a delimiter.
+data = delimiter()
+
 if anzahl > 1:
 	ps = input("gib die prozentuale verteilung an: ")
 	ps = [float(p) for p in ps.split(' ')]
@@ -26,6 +30,7 @@ else:
 	b = int(maxB * float(input("Blau (0-1): ")))
 	colors.append([r, g, b])
 
+
 	# build Complement
 	h,s,v = rgb2hsv(colors[0])
 	h = (h + 0.5) % 1
@@ -33,7 +38,7 @@ else:
 
 #Debug
 printOutData = 'printOutData' in debug and debug['printOutData']
-data = rgb2bytes(complement)
+data += rgb2bytes(complement)
 
 ledsLeft = config['leds']
 for i in range(anzahl-1):
@@ -41,7 +46,6 @@ for i in range(anzahl-1):
 	ledsLeft -= leds
 	data += leds.to_bytes(2, byteorder='big') + rgb2bytes(colors[i])
 data += ledsLeft.to_bytes(2, byteorder='big') + rgb2bytes(colors[anzahl-1])
-
 sent = arduino.write(data)
 
 if 'printComplement' in debug and debug['printComplement']:
