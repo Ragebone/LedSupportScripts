@@ -74,19 +74,19 @@ void loop() {
 
       block = ((256 * b1) + b2);
 
+
       // RunLength happens to be 0, that means delimiter.
       if(block == 0){
         // Move to the next FF byte, indicationg end of delimiter.
-        while(1){
-           while(Serial.available() < 1){}
-            b1 = Serial.read();
-            if(b1 == 255){
-              break;
-            }
-        }
-        // end this iteration of the main loop;
-        break;
+        for(i = 0; i < 6; i++){
+          while(Serial.available() < 1){}
+          b1 = Serial.read();  
+          if(b1 > 100){
+            break;
+          }   
+        }          
       }
+      
       while(Serial.available() < 1){}
       b3 = Serial.read();
       while(Serial.available() < 1){}
