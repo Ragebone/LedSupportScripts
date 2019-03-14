@@ -90,8 +90,9 @@ def delimiter():
     #zero = 0.to_bytes(1, byteorder='big')
     #ff = 255.to_bytes(1, byteorder='big')
     #return zero + zero + zero + zero + zero + zero + ff
-    rg = [0,255]
-    return rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big') + rg[1].to_bytes(1, byteorder='big')
+    #rg = [0,255]
+    #return rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big') + rg[1].to_bytes(1, byteorder='big')
+    return bytearray([0,0,0,0,0,0,255])
 
 def RLE(byte, rescale=False):
     out = b''
