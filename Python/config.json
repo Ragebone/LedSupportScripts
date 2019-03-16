@@ -1,6 +1,6 @@
 {
 	"config" : {
-		"leds"				:	271,
+		"leds"				:	1,
 		"socketport"		:	7777,
 		"counterSize"		:	2,
 		"maxBrightness"		:	255
