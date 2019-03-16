@@ -31,8 +31,6 @@ else:
 	h = (h + 0.5) % 1
 	complement = hsv2rgb(h, s, v)
 
-#Debug
-printOutData = 'printOutData' in debug and debug['printOutData']
 data = rgb2bytes(complement)
 
 ledsLeft = config['leds']
@@ -44,8 +42,9 @@ data += ledsLeft.to_bytes(2, byteorder='big') + rgb2bytes(colors[anzahl-1])
 
 sent = arduino.write(data)
 
+#Debug
 if 'printComplement' in debug and debug['printComplement']:
 	print(complement)
 	
-if printOutData:
+if 'printOutData' in debug and debug['printOutData']:
 	print(data)
