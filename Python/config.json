@@ -7,7 +7,8 @@
 	},
 	"debug" : {
 		"printComplement" 	: 	false,
-		"printDataRate"		: 	false,
+		"printInDataRate"	: 	false,
+		"printOutDataRate"	: 	false,
 		"printInData"		:	false,
 		"printOutData"		:	false
 	}

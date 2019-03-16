@@ -11,7 +11,8 @@ debug = configFile['debug']
 scale = config['maxBrightness'] / 255
 
 printComplement = 'printComplement' in debug and debug['printComplement']
-printDataRate = 'printDataRate' in debug and debug['printDataRate']
+printInDataRate = 'printInDataRate' in debug and debug['printInDataRate']
+printOutDataRate = 'printOutDataRate' in debug and debug['printOutDataRate']
 printInData = 'printInData' in debug and debug['printInData']
 printOutData = 'printOutData' in debug and debug['printOutData']
 

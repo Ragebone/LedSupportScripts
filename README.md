@@ -17,9 +17,10 @@ ___Has to match the AVR script___
 5. maxBrightness: rescale the sent data from 0 to 255 to a lower range.
 ###### debug
 1. printComplement*: print the complement color to set int manually in other solutions like Aura or iCUE.
-2. printDataRate*: print the incoming Datarate.
-3. printInData*: print the bytestream received.
-4. printOutData: print the bytestream sent.
+2. printInDataRate*: print the incoming Datarate.
+3. printOutDataRate*: print the sending Datarate.
+4. printInData*: print the bytestream received.
+5. printOutData: print the bytestream sent.
 
 _\* not used by all scripts_
 
@@ -30,11 +31,7 @@ reads data from socketport, compresses the Data with a Run Length Encoding and s
 #### setRGB
 ---
 asks for user input to create a static color distribution.
-Ignores config: socketport, printDataRate, printInData
-
-#### ColorRange
----
-creates a full color range distribution in steps given by user input.
+Ignores config: socketport, printInDataRate, printOutDataRate, printInData
 
 #### Utility
 ---

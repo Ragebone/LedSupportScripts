@@ -47,4 +47,4 @@ if 'printComplement' in debug and debug['printComplement']:
 	print(complement)
 	
 if 'printOutData' in debug and debug['printOutData']:
-	print(data)
+    print('Bytes sent:', sent, 'Bytes to send:', len(data), 'Data:', data.hex())
