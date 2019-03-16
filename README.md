@@ -40,5 +40,17 @@ Collection of functions used by all scripts. Prints the available serial ports i
 
 
 
+## LED Scripts for Dummies - A Step by Step Guide to use Colorchord with LEDs.
+Lets begin with Colorchord. You should be able to use CNLohrs Version but We'd recommend to get our fork available at github.com/ragebone/colorchord
+In the config, you can about configure it as you like except youll need a DisplayNetwork with either of the 3 default Outdrivers Prominent, Linear or Voronoi. For DisplayNetwork youll need the config values adress, port and leds. The leds value has to match the amount of leds you want to control with the AVR. The port has to match the socketport in the config.json and the adress has to match with the system youre running the scripts on. If youre using it all on the same PC, set it to 127.0.0.1.
 
+Next to the config.json: set the leds to the amount youre using, the serial port, if you have more serial devices than one, and adjust the socketport to the value set in colochord config. Enable debug output if wanted. That should do it for now.
 
+Adjust the AVR script to your needs.
+The TOTALMAINSIZE has to be the sum of all main stripes, the TOTALCOMPLEMENTSIZE the sum of all complement stripes.
+If you have 1 stripe conntected to 1 pin, set the TOTALMAINSIZE and MAINSTRIPE1SIZE to the amount and the MAINSTRIPE1PIN to the pin number and ignore the COMPLEMENT values.
+Init a platformio project with your board, install the FastLED lib (126) and flash it to the AVR.
+
+If done, run the Pipe.py and see your leds working with colorchord. If somethings not working add an issue here.
+
+Enjoy!
