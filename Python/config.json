@@ -1,13 +1,14 @@
 {
 	"config" : {
-		"leds"				:	271,
+		"leds"				:	1,
 		"socketport"		:	7777,
 		"counterSize"		:	2,
 		"maxBrightness"		:	255
 	},
 	"debug" : {
 		"printComplement" 	: 	false,
-		"printDataRate"		: 	false,
+		"printInDataRate"	: 	false,
+		"printOutDataRate"	: 	false,
 		"printInData"		:	false,
 		"printOutData"		:	false
 	}

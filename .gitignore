@@ -3,3 +3,6 @@ AVR/\.piolibdeps/
 AVR/\.pioenvs/
 
 Python/__pycache__
+AVR/platformio\.ini
+
+*.ini

@@ -13,7 +13,8 @@ def main():
     serverSocket = socket(AF_INET, SOCK_DGRAM)
     serverSocket.bind(('', config['socketport']))
 
-    counter = 0
+    inCounter = 0
+    outCounter = 0
     start = time.time()
     print("Piping to ", port, " ...")
     arduino.write(delimiter())
@@ -40,17 +41,19 @@ def main():
         if printComplement:
             print('Complement to main accent:', complement)
 
-        if printOutData:
+        if printInData:
             print('Bytes received:', len(message), 'Data:', message.hex())
-
 
         if printOutData:
             print('Bytes sent:', sent, 'Bytes to send:', len(rle), 'Data:', rle.hex())
 
-        if printDataRate:
-            counter += len(rle)
-            print('Average:', int(round(counter / (time.time() - start), 0)), 'B/s')
+        if printOutDataRate:
+            inCounter += len(rle)
+            print('Average:', int(round(inCounter / (time.time() - start), 0)), 'B/s')
 
+        if printOutDataRate:
+            outCounter += len(rle)
+            print('Average:', int(round(outCounter / (time.time() - start), 0)), 'B/s')
 
 if __name__  == '__main__':
     try:
