@@ -6,6 +6,7 @@
 		"maxBrightness"		:	255
 	},
 	"debug" : {
+		"printOutBufferSize":	false,
 		"printComplement" 	: 	false,
 		"printInDataRate"	: 	false,
 		"printOutDataRate"	: 	false,

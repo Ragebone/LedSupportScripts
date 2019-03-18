@@ -36,6 +36,10 @@ def main():
         sent += arduino.write(rle)
 
         #Debug Outputs
+        if printOutBufferSize:
+            if arduino.out_waiting > 0:
+                print(arduino.out_waiting)
+
         if printComplement:
             print('Complement to main accent:', complement)
 
