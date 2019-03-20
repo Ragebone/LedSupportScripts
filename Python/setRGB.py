@@ -7,7 +7,7 @@ anzahl = int(input("Anzahl Farbakzente: "))
 colors = list()
 
 #begin data with a delimiter.
-data = delimiter()
+data = delimiter
 
 if anzahl > 1:
 	ps = input("gib die prozentuale verteilung an: ")

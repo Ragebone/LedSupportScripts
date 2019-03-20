@@ -17,7 +17,7 @@ def main():
     outCounter = 0
     start = time.time()
     print("Piping to ", port, " ...")
-    arduino.write(delimiter())
+    arduino.write(delimiter)
     while True:
         sent = 0        
         #Get Data

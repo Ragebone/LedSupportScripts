@@ -17,7 +17,7 @@ printOutDataRate = 'printOutDataRate' in debug and debug['printOutDataRate']
 printInData = 'printInData' in debug and debug['printInData']
 printOutData = 'printOutData' in debug and debug['printOutData']
 
-
+delimiter = bytearray([0,0,0,0,0,0,255])
 
 
 def serial_ports():
@@ -87,14 +87,6 @@ def hsv2rgb(h,s,v):
 
 def rgb2bytes(rgb):
     return rgb[0].to_bytes(1, byteorder='big') + rgb[1].to_bytes(1, byteorder='big') + rgb[2].to_bytes(1, byteorder='big')
-
-def delimiter():
-    #zero = 0.to_bytes(1, byteorder='big')
-    #ff = 255.to_bytes(1, byteorder='big')
-    #return zero + zero + zero + zero + zero + zero + ff
-    #rg = [0,255]
-    #return rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big')+rg[0].to_bytes(1, byteorder='big') + rg[1].to_bytes(1, byteorder='big')
-    return bytearray([0,0,0,0,0,0,255])
 
 def RLE(byte, rescale=False):
     out = b''
